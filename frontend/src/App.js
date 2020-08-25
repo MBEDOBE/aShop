@@ -16,46 +16,46 @@ function App() {
 
   return (
     <BrowserRouter>
-    <div className="grid-container">
-      <header className="header">
-        <div className="brand">
-          <button onClick={openMenu}>
-            &#9776;
+      <div className="grid-container">
+        <header className="header">
+          <div className="brand">
+            <button onClick={openMenu}>
+              &#9776;
                 </button>
-                <Link to="/">aShop</Link>
-          
-        </div>
-        <div className="header-links">
-          <a href="cart.html">Cart</a>
-          <a href="signin.html">Sign In</a>
-        </div>
-      </header>
-      <aside className="sidebar">
-        <h3>Shopping Categories</h3>
-        <button className="sidebar-close-button" onClick={closeMenu}>x</button>
-        <ul>
-          <li>
-            <a href="index.html">Pants</a>
-          </li>
+            <Link to="/">aShop</Link>
 
-          <li>
-            <a href="index.html">Shirts</a>
-          </li>
+          </div>
+          <div className="header-links">
+            <a href="cart.html">Cart</a>
+            <a href="signin.html">Sign In</a>
+          </div>
+        </header>
+        <aside className="sidebar">
+          <h3>Shopping Categories</h3>
+          <button className="sidebar-close-button" onClick={closeMenu}>x</button>
+          <ul>
+            <li>
+              <a href="index.html">Pants</a>
+            </li>
 
-        </ul>
-      </aside>
-      <main className="main">
-        <div className="content">
+            <li>
+              <a href="index.html">Shirts</a>
+            </li>
+
+          </ul>
+        </aside>
+        <main className="main">
+          <div className="content">
             <Route path="/product/:id" component={ProductScreen}></Route>
             <Route path="/" exact={true} component={HomeScreen}></Route>
-          
-        </div>
 
-      </main>
-      <footer className="footer">
-        All right reserved by Rein IT &copy; 2020.
+          </div>
+
+        </main>
+        <footer className="footer">
+          All Rights Reserved by Rein IT &copy; 2020.
         </footer>
-    </div>
+      </div>
     </BrowserRouter>
   );
 }
