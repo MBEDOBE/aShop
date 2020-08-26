@@ -1,0 +1,22 @@
+{
+  "name": "ashop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MBEDOBE/aShop.git"
+  },
+  "author": "D. Mbedobe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MBEDOBE/aShop/issues"
+  },
+  "homepage": "https://github.com/MBEDOBE/aShop#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
