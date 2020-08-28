@@ -9,7 +9,7 @@ export default {
             brand: "Nike",
             rating: 4.1,
             numReviews: 10,
-            countInStock: 6,
+            countInStock: 0,
         },
         {
             _id: "2",
