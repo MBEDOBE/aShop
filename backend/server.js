@@ -3,9 +3,9 @@ import data from "./data";
 import dotenv from "dotenv";
 import config from "./config";
 import mongoose from "mongoose";
-import bodyParser from "body-parser";
-/*import userRoute from "./routes/userRoute";
-import productRoute from './routes/productRoute';
+//import bodyParser from "body-parser";
+import userRoute from "./routes/userRoute";
+/*import productRoute from './routes/productRoute';
 import orderRoute from './routes/orderRoute'; */
 
 const app = express();
@@ -24,10 +24,10 @@ mongoose
     })
     .catch((error) => console.log(error.reason));
 
-// const app = express();
+
 
 // app.use(bodyParser.json());
-// app.use("/api/users", userRoute);
+ app.use("/api/users", userRoute);
 // app.use("/api/products", productRoute);
 // app.use("/api/orders", orderRoute);
 // app.get("/api/config/paypal", (req, res) => {
