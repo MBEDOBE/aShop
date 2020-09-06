@@ -3,7 +3,7 @@ import data from "./data";
 import dotenv from "dotenv";
 import config from "./config";
 import mongoose from "mongoose";
-//import bodyParser from "body-parser";
+import bodyParser from "body-parser";
 import userRoute from "./routes/userRoute";
 /*import productRoute from './routes/productRoute';
 import orderRoute from './routes/orderRoute'; */
@@ -20,19 +20,19 @@ mongoose
     .connect(mongodbUrl, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-        useCreateIndex: true,
+        useCreateIndex: true
     })
     .catch((error) => console.log(error.reason));
 
 
 
-// app.use(bodyParser.json());
- app.use("/api/users", userRoute);
+ app.use(bodyParser.json());
+ app.use("/api/users", userRoute)
 // app.use("/api/products", productRoute);
 // app.use("/api/orders", orderRoute);
 // app.get("/api/config/paypal", (req, res) => {
 //     res.send(config.PAYPAL_CLIENT_ID);
-// })
+//})
 app.get("/api/products/:id", (req, res) => {
   const productId = req.params.id;
   const product = data.products.find((x) => x._id === productId);

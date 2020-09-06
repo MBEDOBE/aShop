@@ -1,10 +1,10 @@
 import express from 'express';
 import User from '../models/userModel';
+import { getToken } from "../util"
 
 const router = express.Router();
 
 router.post('/signin', async (req, res) => {
-
     const signinUser = await User.findOne({
         email: req.body.email,
         password: req.body.password
@@ -15,16 +15,15 @@ router.post('/signin', async (req, res) => {
             name: signinUser.name,
             email: signinUser.email,
             isAdmin: signinUser.isAdmin,
-            token: getToken(signinUser)
+            token: getToken(User)
         })
 
     } else {
-        res.status(401).send({ msg: 'Invalid Email or Password.' });
+        res.status(401).send({ msg: 'invalid email or password' })
     }
-
 })
 
-router.post('/register', async (req, res) => {
+ router.post('/register', async (req, res) => {
     const user = new User({
         name: req.body.name,
         email: req.body.email,
@@ -43,14 +42,14 @@ router.post('/register', async (req, res) => {
         res.status(401).send({ msg: 'Invalid User Data.' });
     }
 
-})
+}) 
 
 router.get("/createadmin", async (req, res) => {
     try {
         const user = new User({
             name: 'Mbedobe',
             email: 'danielbushbaby@gmail.com',
-            password: '1234',
+            password: '123456',
             isAdmin: true
         });
         const newUser = await user.save();
